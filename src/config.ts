@@ -14,8 +14,9 @@ export function readConfig(): Config {
 }
 
 export function setUser(user: string) {
+    let oldc = readConfig();
     let c: Config = {
-        dbUrl: "postgres://example",
+        dbUrl: oldc.dbUrl,
         currentUserName: user
     };
     writeConfig(c);
